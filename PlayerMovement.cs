@@ -195,25 +195,45 @@ public class PlayerMovement : NetworkBehaviour
     }
 
 
-    
+    //Turn The Character Sprites Right-Left
     private void FlipTheCharacterSprite()
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.localScale = new Vector3(-.5f, .5f, 1f);
+            CmdFlipLeft();
 
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.localScale = new Vector3(.5f, .5f, 1f);
+            CmdFlipRight();
 
         }
     }
 
     
-    
+    [Command]
+    private void CmdFlipRight()
+    {
+        FlipRight();
+    }
 
-    
+    [Command]
+    private void CmdFlipLeft()
+    {
+        FlipLeft();
+    }
+    [ClientRpc]
+    private void FlipRight()
+    {
+        transform.localScale = new Vector3(.5f, .5f, 1f);
+    }
+
+    [ClientRpc]
+    private void FlipLeft()
+    {
+        transform.localScale = new Vector3(-.5f, .5f, 1f);
+    }
+
     private void DropGlowStick()
     {
        
