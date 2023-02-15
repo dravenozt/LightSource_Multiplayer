@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
   m_Name: 916c286e-8ba8-4769-81a5-285cad708f53
   m_EditorClassIdentifier: 
-  text: 
+  isPlayerSpeaking: 0
+  text: "ya paran ya can\u0131n kocum ani hareket yapma deserim"
   children:
   - f4351926-f593-4fae-aded-542fd8cea9f0
   rect:
     serializedVersion: 2
-    x: 119
-    y: 91
+    x: 112
+    y: 101
     width: 200
     height: 100
 --- !u!114 &-1479874314302422701
@@ -33,6 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
   m_Name: f4351926-f593-4fae-aded-542fd8cea9f0
   m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
   text: 
   children: []
   rect:
@@ -56,3 +58,4 @@ MonoBehaviour:
   nodes:
   - {fileID: -4999228808138181367}
   - {fileID: -1479874314302422701}
+  newNodeOffSet: {x: 250, y: 0}
