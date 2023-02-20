@@ -19,10 +19,17 @@ namespace DialogueUI{
     [SerializeField] GameObject aiResponse;
     private DialogueNode currentNode;
     // Start is called before the first frame update
+  
+    private void Awake() {
+        playerConversant= player.GetComponent<PlayerConversant>();
+        
+        playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();
+        playerConversant.isChoosing=false;
+    }
     void Start()
     {
         
-        playerConversant= player.GetComponent<PlayerConversant>();
+        
          
         //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();// sonradan ekledik
         nextButton.onClick.AddListener(Next);

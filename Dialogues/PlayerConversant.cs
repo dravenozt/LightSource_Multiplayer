@@ -7,15 +7,14 @@ namespace DialogueSystem{
     public class PlayerConversant : MonoBehaviour
 {
     [SerializeField] public Dialogue currentDialogue;
-    private DialogueNode currentNode;
-    private bool isChoosing;
+    public DialogueNode currentNode;
+    public bool isChoosing;
 
     
     // Start is called before the first frame update
     // bura awake idi unutma
     private void Awake() {
-        currentNode= currentDialogue.GetRootNode();
-        isChoosing=false;
+        
     }
 
     // Update is called once per frame
