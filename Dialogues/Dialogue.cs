@@ -20,6 +20,7 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver {
      private void Awake() {
         OnValidate();
         
+        
     }
 #endif
 
@@ -44,19 +45,45 @@ public DialogueNode GetRootNode(){
     return nodes[0];
 }
 
-        public IEnumerable<DialogueNode> GetAllChilden(DialogueNode parentNode)
-        {
+public IEnumerable<DialogueNode> GetAllChilden(DialogueNode parentNode)
+{
            
-            foreach (string childID in parentNode.GetChildren())
-            {
-               if(nodeLookup.ContainsKey(childID)){
-                yield return nodeLookup[childID];
-               }
+    foreach (string childID in parentNode.GetChildren())
+    {
+        if(nodeLookup.ContainsKey(childID)){
+        yield return nodeLookup[childID];
+        }
                 
-            }
+    }
 
            
+}
+
+public IEnumerable<DialogueNode> GetPlayerChildren(DialogueNode currentNode)
+{
+    foreach (DialogueNode node in GetAllChilden(currentNode))
+    {
+        if (node.IsPlayerSpeaking())
+        {
+            yield return node;
         }
+    }
+}
+
+public IEnumerable<DialogueNode> GetAIChilden(DialogueNode currentNode)
+{
+    foreach (DialogueNode node in GetAllChilden(currentNode))
+    {
+        if (!node.IsPlayerSpeaking())
+        {
+            yield return node;
+        }
+    }
+}
+
+
+
+
 #if UNITY_EDITOR
         public void CreateNode(DialogueNode parent)
         {
@@ -136,6 +163,8 @@ public DialogueNode GetRootNode(){
         {
             
         }
+
+        
     }
 }
 

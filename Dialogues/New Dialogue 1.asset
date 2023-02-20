@@ -35,12 +35,12 @@ MonoBehaviour:
   m_Name: f4351926-f593-4fae-aded-542fd8cea9f0
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: 
+  text: zaaaa xd
   children: []
   rect:
     serializedVersion: 2
-    x: 381
-    y: 198
+    x: 139
+    y: 333
     width: 200
     height: 100
 --- !u!114 &11400000
