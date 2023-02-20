@@ -37,7 +37,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: "g\xF6r\xFC\u015F\xFCr\xFCz"
-  children: []
+  children:
+  - e9ddf139-889a-4d51-abc9-ca7a0ab72f27
   rect:
     serializedVersion: 2
     x: 584
@@ -58,10 +59,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: deneme
-  children: []
+  children:
+  - bb68b6cd-ef23-47a2-8686-32b2f73945d3
   rect:
     serializedVersion: 2
-    x: 644
+    x: 646
     y: 421
     width: 200
     height: 100
@@ -101,12 +103,13 @@ MonoBehaviour:
   m_Name: fc0767c4-ae28-406c-a261-725770c3d8cd
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: "z\u0131z\u0131z\u0131z\u0131z\u0131z\u0131z\u0131 heheheh"
-  children: []
+  text: zizizizizizizi heheheh
+  children:
+  - 41db3670-dbc5-4ca9-87b9-5058c656b4d5
   rect:
     serializedVersion: 2
-    x: 652
-    y: 127
+    x: 692
+    y: 99
     width: 200
     height: 100
 --- !u!114 &-4316839996671185739
@@ -132,6 +135,48 @@ MonoBehaviour:
     y: 33
     width: 200
     height: 100
+--- !u!114 &-3316025744016120826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
+  m_Name: bb68b6cd-ef23-47a2-8686-32b2f73945d3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: denedik
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 896
+    y: 421
+    width: 200
+    height: 100
+--- !u!114 &-3188018940534549581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
+  m_Name: 266a768e-8976-40c5-a84a-20723b1af758
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: kaccovvv
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 719
+    y: 709
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +198,10 @@ MonoBehaviour:
   - {fileID: -6702271247008855223}
   - {fileID: 6474898445228057791}
   - {fileID: -4951753901820107467}
+  - {fileID: -3188018940534549581}
+  - {fileID: 3883128781323088780}
+  - {fileID: -3316025744016120826}
+  - {fileID: 4954057024372327481}
   newNodeOffSet: {x: 250, y: 0}
 --- !u!114 &1280488166220225231
 MonoBehaviour:
@@ -176,6 +225,48 @@ MonoBehaviour:
     y: 79
     width: 200
     height: 100
+--- !u!114 &3883128781323088780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
+  m_Name: e9ddf139-889a-4d51-abc9-ca7a0ab72f27
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: baybay
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 834
+    y: 526
+    width: 200
+    height: 100
+--- !u!114 &4954057024372327481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
+  m_Name: 41db3670-dbc5-4ca9-87b9-5058c656b4d5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: alarko kombi
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 942
+    y: 99
+    width: 200
+    height: 100
 --- !u!114 &6474898445228057791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: hehe boi
-  children: []
+  children:
+  - 266a768e-8976-40c5-a84a-20723b1af758
   rect:
     serializedVersion: 2
     x: 467

@@ -54,8 +54,24 @@ namespace DialogueUI{
         choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());// burası ischoosing true ise aktif ediyo full
 
         if (playerConversant.IsChoosing())// burası true çıkıyo full sıkıntı burda
-        {
+            {
+                BrowseChoiceList();
+            }
 
+
+
+            else
+        {
+            AIText.text = playerConversant.GetText();
+            nextButton.gameObject.SetActive(playerConversant.HasNext());
+        }
+
+        
+
+    }
+
+        private void BrowseChoiceList()
+        {
             //burda hiçbi sorun yok çalışıyo
             foreach (Transform item in choiceRoot)
             {
@@ -65,22 +81,17 @@ namespace DialogueUI{
 
             foreach (DialogueNode choice in playerConversant.GetChoices())
             {
-                GameObject choiceInstance= Instantiate(choiceButtonPrefab,choiceRoot);
-                var textComp= choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
-                textComp.text= choice.GetText();
+                GameObject choiceInstance = Instantiate(choiceButtonPrefab, choiceRoot);
+                var textComp = choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
+                textComp.text = choice.GetText();
+                Button button=choiceInstance.GetComponentInChildren<Button>();
+                button.onClick.AddListener(()=>{
+                    playerConversant.ChoiceSelection(choice);
+                    UpdateUI();
+                    // seçtikten sonra node'u bir daha ekrana yazdırmak istiyorsan aşağıyı kullanma
+                    Next();
+                });
             }
         }
-
-
-
-        else
-        {
-            AIText.text = playerConversant.GetText();
-            nextButton.gameObject.SetActive(playerConversant.HasNext());
-        }
-
-        
-
     }
-}
 }

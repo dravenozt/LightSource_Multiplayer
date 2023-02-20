@@ -66,6 +66,12 @@ namespace DialogueSystem{
         //currentNode= children[0];
     }
 
+    public void ChoiceSelection(DialogueNode selectedNode){
+        currentNode= selectedNode;
+        isChoosing= false;
+    }
+
+
 
     public bool HasNext(){
         
