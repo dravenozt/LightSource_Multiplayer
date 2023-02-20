@@ -28,9 +28,9 @@ namespace DialogueSystem{
         return isChoosing;
     }
 
-    public IEnumerable<string> GetChoices(){
-        yield return "haha";
-        yield return "zortttt";
+    public IEnumerable<DialogueNode> GetChoices(){
+        return currentDialogue.GetPlayerChildren(currentNode);
+        
 
     }
 
@@ -59,7 +59,7 @@ namespace DialogueSystem{
         DialogueNode[] children = currentDialogue.GetAIChilden(currentNode).ToArray();
         int randomIndex = Random.Range(0,children.Count());
     
-        currentNode= children[0];
+        currentNode= children[randomIndex];
         
         //DialogueNode[] children = currentDialogue.GetAllChilden(currentNode).ToArray();
     
@@ -69,7 +69,7 @@ namespace DialogueSystem{
 
     public bool HasNext(){
         
-        return currentDialogue.GetAIChilden(currentNode).Count()> 0;
+        return currentDialogue.GetAllChilden(currentNode).Count()> 0;
     }
 }
 }

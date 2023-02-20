@@ -22,7 +22,7 @@ namespace DialogueUI{
   
     private void Awake() {
         playerConversant= player.GetComponent<PlayerConversant>();
-        
+
         playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();
         playerConversant.isChoosing=false;
     }
@@ -63,11 +63,11 @@ namespace DialogueUI{
             }
 
 
-            foreach (string choiceText in playerConversant.GetChoices())
+            foreach (DialogueNode choice in playerConversant.GetChoices())
             {
                 GameObject choiceInstance= Instantiate(choiceButtonPrefab,choiceRoot);
                 var textComp= choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
-                textComp.text= choiceText;
+                textComp.text= choice.GetText();
             }
         }
 
