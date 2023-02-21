@@ -66,16 +66,23 @@ namespace DialogueSystem{
         //currentNode= children[0];
     }
 
+    public bool IsActive(){
+        return currentDialogue != null;
+    }
     public void ChoiceSelection(DialogueNode selectedNode){
         currentNode= selectedNode;
         isChoosing= false;
     }
 
 
-
+    //değiştik
     public bool HasNext(){
+        if (currentDialogue!=null)
+        {
+            return currentDialogue.GetAllChilden(currentNode).Count()> 0;
+        }
+        return false;
         
-        return currentDialogue.GetAllChilden(currentNode).Count()> 0;
     }
 }
 }

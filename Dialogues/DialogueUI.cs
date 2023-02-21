@@ -17,27 +17,41 @@ namespace DialogueUI{
     [SerializeField] Transform choiceRoot;
     [SerializeField] GameObject choiceButtonPrefab;
     [SerializeField] GameObject aiResponse;
+    [SerializeField] Button quitButton;
+    //deneme
+    [SerializeField] DialoguListSO dialogueList;
+    
     private DialogueNode currentNode;
-    // Start is called before the first frame update
+    
   
     private void Awake() {
         playerConversant= player.GetComponent<PlayerConversant>();
-
-        playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();
+        
+        //iki dk commentte dursun
+        //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();
         playerConversant.isChoosing=false;
     }
     void Start()
-    {
-        
-        
-         
-        //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();// sonradan ekledik
-        nextButton.onClick.AddListener(Next);
-        
-        UpdateUI();
-    }
+        {
+            //deneme
+            SetDialogueIndex(1);
 
-    void Next(){
+            //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();// sonradan ekledik
+            nextButton.onClick.AddListener(Next);
+            quitButton.onClick.AddListener(() => Quit()
+            );
+
+            UpdateUI();
+        }
+
+        //pull dialogue from dialogue list scriptable object
+        private void SetDialogueIndex(int index)
+        {
+            playerConversant.currentDialogue = dialogueList.allDialogues[index];
+            playerConversant.currentNode = playerConversant.currentDialogue.GetRootNode();
+        }
+
+        void Next(){
         
         
         playerConversant.Next();
@@ -50,6 +64,7 @@ namespace DialogueUI{
     {
         //AIText.text = playerConversant.GetText();
         //nextButton.gameObject.SetActive(playerConversant.HasNext());
+        gameObject.SetActive(playerConversant.IsActive());
         aiResponse.SetActive(!playerConversant.IsChoosing()); //
         choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());// burası ischoosing true ise aktif ediyo full
 
@@ -93,5 +108,15 @@ namespace DialogueUI{
                 });
             }
         }
+        public void Quit(){
+            playerConversant.currentDialogue= null;
+            playerConversant.currentNode=null;
+            playerConversant.isChoosing=false;
+            UpdateUI();
+
+        }
+    
     }
+
+    
 }
