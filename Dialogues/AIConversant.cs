@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 public class AIConversant : MonoBehaviour
-{   
+{  
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //raycast yapılacak???
+     /*
+    private void Update() {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Physics.Raycast(ray,out hit,100f))
+        {
+            if (hit.transform!= null)
+            {
+                Debug.Log("uzakligim");
+                Debug.Log(hit);
+            }
+        }
     }
+    */
 }

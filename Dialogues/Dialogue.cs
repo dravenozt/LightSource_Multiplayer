@@ -8,11 +8,15 @@ namespace DialogueSystem
 {
     [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue System/Dialogue", order = 0)]
 public class Dialogue : ScriptableObject, ISerializationCallbackReceiver {
+    [Header("Dialogue bubbles:")]
     [SerializeField]
     List<DialogueNode> nodes= new List<DialogueNode>(); //= new List<DialogueNode>();
     [SerializeField]
     Vector2 newNodeOffSet = new Vector2(250,0);
     Dictionary<string,DialogueNode> nodeLookup= new Dictionary<string, DialogueNode>();
+    //deneme
+    [Header("Name of the speaker")]
+    public string conversantName;
 
 
 

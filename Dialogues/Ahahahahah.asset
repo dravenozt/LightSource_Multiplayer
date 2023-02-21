@@ -203,6 +203,7 @@ MonoBehaviour:
   - {fileID: -3316025744016120826}
   - {fileID: 4954057024372327481}
   newNodeOffSet: {x: 250, y: 0}
+  conversantName: tedirgin gorunuslu adam
 --- !u!114 &1280488166220225231
 MonoBehaviour:
   m_ObjectHideFlags: 0

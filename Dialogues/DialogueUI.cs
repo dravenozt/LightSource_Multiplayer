@@ -10,16 +10,29 @@ namespace DialogueUI{
     public class DialogueUI : MonoBehaviour
 {   
     PlayerConversant playerConversant;
+    [Tooltip("Drag Player GameObject")]
     public GameObject player;
+    [Tooltip("Drag AI Text from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
     [SerializeField] TextMeshProUGUI AIText;
 
+    [Tooltip("Drag Next Button from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
     [SerializeField] Button nextButton;
+    [Tooltip("Drag Choices Gameobject")]
     [SerializeField] Transform choiceRoot;
+    [Tooltip("Drag the Choice Button prefab from 'GamePlay UI Prefabs' folder")]
     [SerializeField] GameObject choiceButtonPrefab;
+    [Tooltip("Drag AI Response from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
     [SerializeField] GameObject aiResponse;
+    [Tooltip("Drag Quit Button from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
     [SerializeField] Button quitButton;
+    [Tooltip("Drag Speaker Name from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
+    [SerializeField] GameObject speakerName;
     //deneme
+    [Header("List of the dialogues")]
+    [Tooltip("Drag your dialogue list scriptable object to adress dialogues from this script by using SetDialogueIndex function")]
     [SerializeField] DialoguListSO dialogueList;
+    
+    
     
     private DialogueNode currentNode;
     
@@ -27,14 +40,18 @@ namespace DialogueUI{
     private void Awake() {
         playerConversant= player.GetComponent<PlayerConversant>();
         
+        
         //iki dk commentte dursun
         //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();
         playerConversant.isChoosing=false;
+        
+        
     }
     void Start()
         {
             //deneme
-            SetDialogueIndex(1);
+            SetDialogueIndex(0);
+            
 
             //playerConversant.currentNode= playerConversant.currentDialogue.GetRootNode();// sonradan ekledik
             nextButton.onClick.AddListener(Next);
@@ -44,28 +61,58 @@ namespace DialogueUI{
             UpdateUI();
         }
 
+
+    
+        
         //pull dialogue from dialogue list scriptable object
         private void SetDialogueIndex(int index)
         {
             playerConversant.currentDialogue = dialogueList.allDialogues[index];
             playerConversant.currentNode = playerConversant.currentDialogue.GetRootNode();
+
+            
         }
 
-        void Next(){
-        
-        
-        playerConversant.Next();
-        UpdateUI();
-        
-    }
+        void Next()
+        {
 
-    
-    void UpdateUI()
+
+            playerConversant.Next();
+            //deneme
+            //SetSpeakerName();
+
+
+            //deneme son
+            UpdateUI();
+
+        }
+
+        //prints the name of speaker
+        private void SetSpeakerName()
+        {
+            if (playerConversant.currentNode != null)
+            {
+                if (playerConversant.IsChoosing())
+                {
+                    speakerName.GetComponent<TextMeshProUGUI>().text = "You:";
+                    
+                }
+                else
+                {
+                    speakerName.GetComponent<TextMeshProUGUI>().text = playerConversant.currentDialogue.conversantName + ":";
+                    
+                }
+
+            }
+        }
+
+        void UpdateUI()
     {
         //AIText.text = playerConversant.GetText();
         //nextButton.gameObject.SetActive(playerConversant.HasNext());
         gameObject.SetActive(playerConversant.IsActive());
         aiResponse.SetActive(!playerConversant.IsChoosing()); //
+        SetSpeakerName();
         choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());// burası ischoosing true ise aktif ediyo full
 
         if (playerConversant.IsChoosing())// burası true çıkıyo full sıkıntı burda
@@ -115,6 +162,10 @@ namespace DialogueUI{
             UpdateUI();
 
         }
+
+
+        //public string conversant_name;
+        //public string player_name="You";
     
     }
 
