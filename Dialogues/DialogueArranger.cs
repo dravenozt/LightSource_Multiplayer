@@ -16,6 +16,7 @@ public class DialogueArranger : NetworkBehaviour
     public GameObject dialoguePrefab;
     [HideInInspector]public bool isDialogueBubbleOpen= false;
     Dialogue dialogue;
+    public int dialogueIndex;
     
 
     private void Awake() {
@@ -32,7 +33,8 @@ public class DialogueArranger : NetworkBehaviour
 
     private void Update()
     {   //burayı düzenlersin illa 1 olmayacak
-        OpenDialogue(1);
+        
+        OpenDialogue(dialogueIndex);
         
         
     }
