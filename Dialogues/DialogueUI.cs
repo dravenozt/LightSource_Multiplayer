@@ -28,11 +28,12 @@ namespace DialogueUI{
     [Tooltip("Drag Speaker Name from Dialogue prefab in 'GamePlay UI Prefabs' folder")]
     [SerializeField] GameObject speakerName;
     //deneme
+    
     [Header("List of the dialogues")]
     [Tooltip("Drag your dialogue list scriptable object to adress dialogues from this script by using SetDialogueIndex function")]
     [SerializeField] DialoguListSO dialogueList;
-    
-    
+    //deneme
+    public DialogueArranger dialogueArranger;
     
     private DialogueNode currentNode;
     
@@ -58,15 +59,16 @@ namespace DialogueUI{
             quitButton.onClick.AddListener(() => Quit()
             );
 
-            UpdateUI();
+           UpdateUI();
         }
 
 
     
         
         //pull dialogue from dialogue list scriptable object
-        private void SetDialogueIndex(int index)
-        {
+        public void SetDialogueIndex(int index)
+        {   
+            
             playerConversant.currentDialogue = dialogueList.allDialogues[index];
             playerConversant.currentNode = playerConversant.currentDialogue.GetRootNode();
 
@@ -106,7 +108,7 @@ namespace DialogueUI{
             }
         }
 
-        void UpdateUI()
+        public void UpdateUI()
     {
         //AIText.text = playerConversant.GetText();
         //nextButton.gameObject.SetActive(playerConversant.HasNext());
@@ -155,17 +157,20 @@ namespace DialogueUI{
                 });
             }
         }
+
+        
         public void Quit(){
             playerConversant.currentDialogue= null;
             playerConversant.currentNode=null;
             playerConversant.isChoosing=false;
+            dialogueArranger.didHit=false;//okey çalışıyo
+            dialogueArranger.isDialogueBubbleOpen=false;
+
             UpdateUI();
+            
 
         }
 
-
-        //public string conversant_name;
-        //public string player_name="You";
     
     }
 
