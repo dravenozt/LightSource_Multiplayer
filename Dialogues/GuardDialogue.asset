@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-455515109653724403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
+  m_Name: dad01b30-1610-4315-bc0e-d1503c4e3689
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: None of your business.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 462
+    y: 195
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10,17 +31,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11675fb1375be0e4b9097456782a61fb, type: 3}
-  m_Name: New Dialogue 2
+  m_Name: GuardDialogue
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 232706649330648185}
-  - {fileID: 906622767112288826}
-  - {fileID: 5065553086283334381}
-  - {fileID: 8901150523352403420}
-  - {fileID: 8824426406485660836}
+  - {fileID: 3135820938106740581}
+  - {fileID: 5136009897737289179}
+  - {fileID: -455515109653724403}
+  - {fileID: 5537772641024727799}
   newNodeOffSet: {x: 250, y: 0}
   conversantName: 
---- !u!114 &232706649330648185
+--- !u!114 &3135820938106740581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,19 +50,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
-  m_Name: 182d0666-6485-4f62-97b5-b0ac55efe178
+  m_Name: 73e58642-286d-48de-8e85-cd74e316bbe1
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: merhaba
+  text: Hey there, stranger!
   children:
-  - 68dc38f5-801c-4d4e-93e6-5fa9125ebc15
+  - 62abafeb-d0fa-488a-b7bc-49fd07f4f65c
   rect:
     serializedVersion: 2
-    x: 48
-    y: 66
+    x: 9
+    y: 58
     width: 200
     height: 100
---- !u!114 &906622767112288826
+--- !u!114 &5136009897737289179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,42 +72,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
-  m_Name: 68dc38f5-801c-4d4e-93e6-5fa9125ebc15
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: "iyi aga sen nab\u0131yon"
-  children:
-  - 83bbf6d8-076a-495c-870b-07ae6408a0a1
-  rect:
-    serializedVersion: 2
-    x: 302
-    y: 172
-    width: 200
-    height: 100
---- !u!114 &5065553086283334381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
-  m_Name: 83bbf6d8-076a-495c-870b-07ae6408a0a1
+  m_Name: 62abafeb-d0fa-488a-b7bc-49fd07f4f65c
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: "iyiyim kankac\u0131m nolsun"
+  text: What are you doing here?
   children:
-  - 6e5983eb-177a-4ffc-a995-76ca76806efe
-  - 888f8ac5-ace2-46c4-8659-1b432e5b0bad
+  - dad01b30-1610-4315-bc0e-d1503c4e3689
+  - 917fa798-766e-48da-9f8a-e63fde7b2b49
   rect:
     serializedVersion: 2
-    x: 491
-    y: 394
+    x: 285
+    y: 58
     width: 200
     height: 100
---- !u!114 &8824426406485660836
+--- !u!114 &5537772641024727799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,35 +95,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
-  m_Name: 888f8ac5-ace2-46c4-8659-1b432e5b0bad
+  m_Name: 917fa798-766e-48da-9f8a-e63fde7b2b49
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: bu
+  text: Just looking for my dog
   children: []
   rect:
     serializedVersion: 2
-    x: 804
-    y: 452
-    width: 200
-    height: 100
---- !u!114 &8901150523352403420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 653fb2d040909884298b751b5538788f, type: 3}
-  m_Name: 6e5983eb-177a-4ffc-a995-76ca76806efe
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: "\u015Fu"
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 719
-    y: 212
+    x: 516
+    y: 21
     width: 200
     height: 100

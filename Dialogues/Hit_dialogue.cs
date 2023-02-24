@@ -38,6 +38,7 @@ public class Hit_dialogue : MonoBehaviour
         {
             case "Store": dialogueArranger.dialogueIndex=1;break;
             case "Player":dialogueArranger.dialogueIndex=0;break;
+            case "Guard": dialogueArranger.dialogueIndex=3;break;
 
             default:break;
         }
