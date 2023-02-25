@@ -30,18 +30,22 @@ public class Hit_dialogue : MonoBehaviour
     void Update()
     {
 
-        if (!playerConversant.HasNext() && playerConversant.currentNode != null&&quests.GetComponent<Quests>().currentQuest == null)
+        if (!playerConversant.HasNext() && playerConversant.currentNode != null && quests.GetComponent<Quests>().currentQuest == null)
         {
             Debug.Log("görev verme zamanı");
             timeToGiveQuest = true;
         }
 
         SetTheQuestSO();
+        SetQuestUI();
+    }
 
-        if (timeToGiveQuest&&quests.GetComponent<Quests>().currentQuest != null)
+    private void SetQuestUI()
+    {
+        if (timeToGiveQuest && quests.GetComponent<Quests>().currentQuest != null)
         {
             quests.GetComponent<Quests>().SetTheQuestProperties();
-            timeToGiveQuest=false;
+            timeToGiveQuest = false;
         }
     }
 

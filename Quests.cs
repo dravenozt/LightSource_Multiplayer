@@ -52,6 +52,13 @@ public class Quests : MonoBehaviour
     public void SetTheQuestProperties()
     {
         questText.GetComponent<TextMeshProUGUI>().text = currentQuest.questDescription;
+        if (questImage.GetComponent<Image>().sprite==null)
+        {
+            //questImage.GetComponent<Image>().color= new Color(129,84,71);
+
+            //dikkatli ol image ı kapatıyosun
+            questImage.SetActive(false);
+        }
         questImage.GetComponent<Image>().sprite = currentQuest.image;
         questImage.GetComponent<Image>().color = Color.white;
         //hit_Dialogue.timeToGiveQuest=false;

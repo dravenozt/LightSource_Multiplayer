@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c6559d27ccd33428ba703670c48470, type: 3}
   m_Name: Quest1
   m_EditorClassIdentifier: 
-  questDescription: Collect the bones
-  image: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
+  questDescription: Find ross
+  image: {fileID: 0}
