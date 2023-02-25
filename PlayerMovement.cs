@@ -28,6 +28,7 @@ public class PlayerMovement : NetworkBehaviour
     public Transform playerPosition;
     public TextMeshProUGUI glowstickText;
     [SyncVar]private bool isLightsOn=false;
+    public bool isIndialogue=false;
     
     
 
@@ -118,7 +119,10 @@ public class PlayerMovement : NetworkBehaviour
 
     
     void FixedUpdate() {
-        rb.MovePosition(rb.position + movement*movementSpeed*Time.fixedDeltaTime);
+        if (!isIndialogue)
+        {
+            rb.MovePosition(rb.position + movement*movementSpeed*Time.fixedDeltaTime);
+        }
     }
 
     
@@ -275,6 +279,17 @@ public class PlayerMovement : NetworkBehaviour
         //FindObjectOfType<GlowStickCount>().gscount= glowstickcount;
         
     }
+
+    /*
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag=="Guard")
+        {   
+            isIndialogue=true;
+        }
+        
+    }*/
+
+    
 
 
 

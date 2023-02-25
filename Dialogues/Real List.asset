@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e9df03ef2874f149853362cc7656d35, type: 3}
-  m_Name: List
+  m_Name: Real List
   m_EditorClassIdentifier: 
   allDialogues:
-  - {fileID: 11400000, guid: 47abc56377c06354cafd35a89c310a79, type: 2}
-  - {fileID: 11400000, guid: 44b9c88792394b042bf9354371cda760, type: 2}
-  - {fileID: 11400000, guid: ffde5b0cdfdf2e44c9ef7553e5edd5b9, type: 2}
   - {fileID: 11400000, guid: ffde5b0cdfdf2e44c9ef7553e5edd5b9, type: 2}

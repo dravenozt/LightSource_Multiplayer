@@ -11,6 +11,7 @@ public class Quests : MonoBehaviour
     public GameObject questText;
     public GameObject questImage;
     private bool isSheetOpen= false;
+    Hit_dialogue hit_Dialogue;
     
 
     private void Awake() {
@@ -26,28 +27,36 @@ public class Quests : MonoBehaviour
     }
     private void Update()
     {
-        
+        //SetQuestUI();
     }
 
+    //sürekli yazdırıyor ben bi kere yazdırması lazım
     private void SetQuestUI()
     {
         if (currentQuest == null)
         {   
-            Debug.Log("quest yok çalıştı");
+            Debug.Log("görev yok çalıştı");
             //gameObject.GetComponentInChildren<TextMeshProUGUI>().text="You have no quest";
+            //SetTheQuestProperties();
             
 
         }
-        else
+        else 
         {
-            gameObject.GetComponentInChildren<TextMeshProUGUI>().text = currentQuest.questDescription;
-            questImage.GetComponent<Image>().sprite = currentQuest.image;
-            questImage.GetComponent<Image>().color=Color.white;
-           // GetComponentInChildren<Image>().color.CompareRGB(Color.white);
+            SetTheQuestProperties();
+            // GetComponentInChildren<Image>().color.CompareRGB(Color.white);
 
         }
     }
 
+    public void SetTheQuestProperties()
+    {
+        questText.GetComponent<TextMeshProUGUI>().text = currentQuest.questDescription;
+        questImage.GetComponent<Image>().sprite = currentQuest.image;
+        questImage.GetComponent<Image>().color = Color.white;
+        //hit_Dialogue.timeToGiveQuest=false;
+        Debug.Log("görev yazdırılıyor");
+    }
 
     public void OpenQuestWindow(){
         if (!isSheetOpen)

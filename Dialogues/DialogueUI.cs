@@ -165,6 +165,7 @@ namespace DialogueUI{
             playerConversant.isChoosing=false;
             dialogueArranger.didHit=false;//okey çalışıyo
             dialogueArranger.isDialogueBubbleOpen=false;
+            //player.GetComponent<PlayerMovement>().isIndialogue=false;
 
             UpdateUI();
             
